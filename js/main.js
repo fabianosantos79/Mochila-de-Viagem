@@ -7,6 +7,9 @@ form.addEventListener('submit', (item) => {
     const qtde = item.target.elements['quantidade'].value
 
     criarElemento(nome, qtde)
+
+    nome = ''
+    qtde = ''
 })
 
 function criarElemento(nome, quantidade) {
@@ -20,4 +23,7 @@ function criarElemento(nome, quantidade) {
     li.innerHTML += nome
 
     lista.appendChild(li)
+
+    localStorage.setItem('nome', nome)
+    localStorage.setItem('quantidade', quantidade)
 }
